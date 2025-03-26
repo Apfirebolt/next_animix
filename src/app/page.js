@@ -19,18 +19,18 @@ const Home = () => {
           priority
         />
         <section className="container mx-auto p-6">
-          <h1 className="text-4xl font-bold mb-4">About Us</h1>
+          <h1 className="text-4xl font-bold mb-4">About Animix</h1>
           <p className="text-lg mb-4">
-            Welcome to our website! We are dedicated to providing the best
-            service possible.
+            Welcome to Animix! Your ultimate destination for everything related to anime.
           </p>
           <p className="text-lg mb-4">
-            Our team is composed of experienced professionals who are passionate
-            about what they do.
+            Dive into a vast collection of anime series, explore detailed character profiles, and stay updated with the latest news in the anime world.
+          </p>
+          <p className="text-lg mb-4">
+            Whether you're a long-time fan or just starting your anime journey, Animix is here to provide you with all the information and resources you need.
           </p>
           <p className="text-lg">
-            Thank you for visiting our site. We hope you find what you're
-            looking for and enjoy your stay.
+            Thank you for visiting Animix. We hope you enjoy exploring the fascinating world of anime with us!
           </p>
         </section>
       </main>

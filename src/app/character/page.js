@@ -22,13 +22,24 @@ const CharacterPage = async () => {
   return (
     <Fragment>
       <Header />
-      <main>
-        <section className="container mx-auto p-6">
-          <h1 className="text-4xl font-bold mb-4">Character List</h1>
-          <p className="text-lg mb-4">
-            On this page you can find a list of characters available on our website.
-          </p>
-          <CharacterSection characters={characters} />
+      <main className="bg-secondary text-accent">
+        <section className="relative container mx-auto p-6">
+          <div className="relative bg-gray-800 text-white rounded-lg overflow-hidden">
+            <img
+              src="https://static.wikia.nocookie.net/dragonball/images/2/23/Migatte_no_Gokui_Kizashi.png/revision/latest/scale-to-width-down/1200?cb=20181017065922"
+              alt="Hero Background"
+              className="absolute inset-0 w-full h-full object-cover opacity-50"
+            />
+            <div className="relative z-10 p-8">
+              <h1 className="text-5xl font-bold mb-4">Character List</h1>
+              <p className="text-lg mb-4">
+                Explore a wide range of characters available on our platform.
+              </p>
+            </div>
+          </div>
+          <div className="mt-6">
+            <CharacterSection characters={characters} />
+          </div>
         </section>
       </main>
       <Footer />

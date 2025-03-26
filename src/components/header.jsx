@@ -5,12 +5,12 @@ import Link from "next/link";
 const Header = () => {
 
   return (
-    <header className="bg-primary text-accent p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-2xl font-bold">
+    <header className="bg-primary text-accent">
+      <div className="flex justify-between items-center">
+        <h1 className="text-2xl w-1/2 bg-amber-800 p-5 font-bold">
           <Link href="/">Next Animix</Link>
         </h1>
-        <nav>
+        <nav className="w-1/2 p-5">
           <ul className="flex space-x-4">
             <li>
               <Link href="/" className="hover:text-gray-400">

@@ -46,16 +46,16 @@ const AnimeSection = ({ anime }) => {
       {loading && <Loader />}
       {!loading && animeList?.data?.length > 0 ? (
         <div>
-          <div className="flex justify-center mt-4">
+          <div className="flex justify-center my-4">
             <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              className="bg-background hover:bg-blue-700 text-secondary font-bold py-2 px-4 rounded"
               disabled={currentPage === 1}
               onClick={() => goToPreviousPage()}
             >
               Prev
             </button>
             <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2"
+              className="bg-background hover:bg-blue-700 text-secondary font-bold py-2 px-4 rounded ml-2"
               onClick={() => goToNextPage()}
             >
               Next

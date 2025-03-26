@@ -13,32 +13,50 @@ const Header = () => {
         <nav className="w-1/2 p-5">
           <ul className="flex space-x-4">
             <li>
-              <Link href="/" className="hover:text-gray-400">
+              <Link
+                href="/"
+                className="px-2 py-3 hover:bg-secondary hover:text-accent transition-all duration-300 shadow rounded"
+              >
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/about" className="hover:text-gray-400">
+              <Link
+                href="/about"
+                className="px-2 py-3 hover:bg-secondary hover:text-accent transition-all duration-300 shadow rounded"
+              >
                 About
               </Link>
             </li>
             <li>
-              <Link href="/character" className="hover:text-gray-400">
+              <Link
+                href="/character"
+                className="px-2 py-3 hover:bg-secondary hover:text-accent transition-all duration-300 shadow rounded"
+              >
                 Character
               </Link>
             </li>
             <li>
-              <Link href="/anime" className="hover:text-gray-400">
+              <Link
+                href="/anime"
+                className="px-2 py-3 hover:bg-secondary hover:text-accent transition-all duration-300 shadow rounded"
+              >
                 Anime
               </Link>
             </li>
             <li>
-              <Link href="/manga" className="hover:text-gray-400">
+              <Link
+                href="/manga"
+                className="px-2 py-3 hover:bg-secondary hover:text-accent transition-all duration-300 shadow rounded"
+              >
                 Manga
               </Link>
             </li>
             <li>
-              <Link href="/category" className="hover:text-gray-400">
+              <Link
+                href="/category"
+                className="px-2 py-3 hover:bg-secondary hover:text-accent transition-all duration-300 shadow rounded"
+              >
                 Category
               </Link>
             </li>

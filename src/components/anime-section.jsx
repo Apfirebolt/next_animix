@@ -10,11 +10,16 @@ const AnimeSection = ({ anime }) => {
   const [animeList, setAnimeList] = useState({});
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchText, setSearchText] = useState("");
   const [isClient, setIsClient] = useState(false);
 
   const fetchAnimeData = async (link) => {
     try {
       setLoading(true);  
+      if (searchText) {
+        // add ?filter[text]=searchText to the link
+        link = `${link}?filter[text]=${searchText}`;
+      }
       const response = await axiosInstance.get(link);
       setAnimeList(response.data);
       setLoading(false);
@@ -23,6 +28,19 @@ const AnimeSection = ({ anime }) => {
       setLoading(false);
     }
   };
+
+  const searchAnime = async () => {
+    try {
+      setLoading(true);
+      const response = await axiosInstance.get(`/anime?filter[text]=${searchText}`);
+      setAnimeList(response.data);
+      setLoading(false);
+    }
+    catch (error) {
+      console.error("Error fetching anime data:", error);
+      setLoading(false);
+    }
+  }
 
   const goToNextPage = (page) => {
     setCurrentPage(currentPage + 1);
@@ -51,6 +69,21 @@ const AnimeSection = ({ anime }) => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
           >
+           <div className="flex justify-center my-4">
+            <input
+              type="text"
+              placeholder="Search characters..."
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+              className="border text-white text-lg border-gray-300 rounded py-2 px-4 w-full max-w-lg"
+            />
+            <button
+              className="bg-primary hover:bg-accent hover:text-black text-white font-bold py-2 px-4 rounded ml-2"
+              onClick={() => searchAnime()}
+            >
+              Search
+            </button>
+          </div>  
           <div className="flex justify-center my-4">
             <button
               className="bg-background hover:bg-blue-700 text-secondary font-bold py-2 px-4 rounded"

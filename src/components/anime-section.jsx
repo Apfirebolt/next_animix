@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import AnimeCard from "./anime-card";
+import { motion } from "framer-motion";
 import Loader from "./loader";
 import axiosInstance from "@/plugins/interceptor";
 
@@ -45,7 +46,11 @@ const AnimeSection = ({ anime }) => {
     <div>
       {loading && <Loader />}
       {!loading && animeList?.data?.length > 0 ? (
-        <div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          >
           <div className="flex justify-center my-4">
             <button
               className="bg-background hover:bg-blue-700 text-secondary font-bold py-2 px-4 rounded"
@@ -66,7 +71,7 @@ const AnimeSection = ({ anime }) => {
               <AnimeCard key={animeItem.id} anime={animeItem} />
             ))}
           </div>
-        </div>
+        </motion.div>
       ) : (
         <p>Loading...</p>
       )}

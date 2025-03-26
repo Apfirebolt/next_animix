@@ -1,8 +1,9 @@
 import React, { Fragment } from "react";
+// Removed unused Head import
 import axiosInstance from "@/plugins/interceptor";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
-import CharacterSection from "@/components/character-section";
+import Header from "@/components/header"; // Ensure this is a default export
+import Footer from "@/components/footer"; // Ensure this is a default export
+import CharacterSection from "@/components/character-section"; // Ensure this is a default export
 
 async function getCharacterList() {
   try {
@@ -22,11 +23,13 @@ const CharacterPage = async () => {
   return (
     <Fragment>
       <Header />
-      <main className="bg-secondary text-accent">
+      <main
+        className="bg-secondary text-secondary"
+      >
         <section className="relative container mx-auto p-6">
           <div className="relative bg-gray-800 text-white rounded-lg overflow-hidden">
             <img
-              src="https://static.wikia.nocookie.net/dragonball/images/2/23/Migatte_no_Gokui_Kizashi.png/revision/latest/scale-to-width-down/1200?cb=20181017065922"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOtjz9VcQf9x_SeNojWaktXycNGWzsETzqaA&s"
               alt="Hero Background"
               className="absolute inset-0 w-full h-full object-cover opacity-50"
             />

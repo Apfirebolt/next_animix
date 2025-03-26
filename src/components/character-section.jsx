@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import CharacterCard from "./character-card";
 import Loader from "./loader";
 import axiosInstance from "@/plugins/interceptor";
@@ -63,7 +64,14 @@ const CharacterSection = ({ characters }) => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {characterList.data.map((characterItem) => (
-              <CharacterCard key={characterItem.id} character={characterItem} />
+              <motion.div
+                key={characterItem.id}
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <CharacterCard character={characterItem} />
+              </motion.div>
             ))}
           </div>
         </div>

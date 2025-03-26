@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import axiosInstance from "@/plugins/interceptor";
+import { motion } from "framer-motion";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import MangaSection from "@/components/manga-section";
@@ -26,7 +27,7 @@ const MangaPage = async () => {
         <section className="container mx-auto p-6">
           <div className="relative bg-gray-800 text-white rounded-lg overflow-hidden">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOtjz9VcQf9x_SeNojWaktXycNGWzsETzqaA&s"
+              src="https://4kwallpapers.com/images/walls/thumbs_3t/13988.jpg"
               alt="Hero Background"
               className="absolute inset-0 w-full h-full object-cover opacity-50"
             />

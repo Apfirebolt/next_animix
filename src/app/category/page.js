@@ -1,13 +1,13 @@
 import React, { Fragment } from "react";
 import axiosInstance from "@/plugins/interceptor";
+import { motion } from "framer-motion";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import CategoryCard from "@/components/category-card";
 
 async function getCategories() {
   try {
-    const response = await axiosInstance.get("categories"); // Replace with your API endpoint
-
+    const response = await axiosInstance.get("categories");
     const categories = response.data.data;
     return categories;
   } catch (error) {
@@ -18,6 +18,8 @@ async function getCategories() {
 
 const CategoryPage = async () => {
   const categories = await getCategories();
+
+  const categoryTitles = categories.map((category) => category.attributes.title).join(", ");
 
   return (
     <Fragment>
@@ -51,5 +53,15 @@ const CategoryPage = async () => {
     </Fragment>
   );
 };
+
+export async function generateMetadata() {
+    const categories = await getCategories();
+    const categoryTitles = categories.map((category) => category.attributes.title).join(", ");
+
+    return {
+        title: "Animix - Category List",
+        description: `Explore categories like ${categoryTitles} and more on Animix.`,
+    }
+}
 
 export default CategoryPage;

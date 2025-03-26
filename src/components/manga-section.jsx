@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import MangaCard from "./manga-card";
+import { motion } from "framer-motion";
 import Loader from "./loader";
 import axiosInstance from "@/plugins/interceptor";
 
@@ -42,10 +43,16 @@ const MangaSection = ({ mangas }) => {
   }, []);
 
   return (
-    <div>
+    <div
+      
+    >
       {loading && <Loader />}
       {!loading && mangaList?.data?.length > 0 ? (
-        <div>
+        <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        >
           <div className="flex justify-center my-4">
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
@@ -66,7 +73,7 @@ const MangaSection = ({ mangas }) => {
               <MangaCard key={mangaItem.id} manga={mangaItem} />
             ))}
           </div>
-        </div>
+        </motion.div>
       ) : (
         <p>Loading...</p>
       )}

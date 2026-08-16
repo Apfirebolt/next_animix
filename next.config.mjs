@@ -18,6 +18,11 @@ const nextConfig = {
         hostname: '4kwallpapers.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'media.kitsu.app',
+        pathname: '/**',
+      },
     ],
   },
 };

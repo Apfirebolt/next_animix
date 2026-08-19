@@ -19,7 +19,7 @@ COPY . .
 # Set environment variables for build time
 ENV NEXT_TELEMETRY_DISABLED=1
 # Allocate sufficient memory specifically for the build process
-ENV NODE_OPTIONS="--max-old-space-size=2048"
+ENV NODE_OPTIONS="--max-old-space-size=1538"
 
 RUN npm run build
 

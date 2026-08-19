@@ -9,9 +9,6 @@ services:
       - NODE_ENV=production
       - NEXTAUTH_URL=http://localhost
       - NEXTAUTH_SECRET=your_nextauth_secret_key_here
-      # Add other environment variables (MONGODB_URI, JWT_SECRET, etc.)
-    env_file:
-      - .env
     expose:
       - "3000"
     networks:
